@@ -95,14 +95,22 @@ function checkAddress (address) {
   if (owner2wallet[address]) {
     const wallets = owner2wallet[address]
     return {
-      warn: `You are affected. Your wallet ${wallets.join(', ')} is frozen.`
+      warn: (
+        <span>You are affected. Your wallet {wallets.map(addr => (
+          <a target='_blank' href={`https://etherscan.io/address/${addr}`}>{addr}</a>
+        ))} is frozen.</span>
+      )
     }
   }
 
   if (wallet2owner[address]) {
     const owners = wallet2owner[address].length
     return {
-      warn: `You are affected. This address is a Parity Multisig wallet with ${owners} owners.`
+      warn: (
+        <span>
+          You are affected. This address is a Parity Multisig wallet with ${owners} owners.
+        </span>
+      )
     }
   }
 
