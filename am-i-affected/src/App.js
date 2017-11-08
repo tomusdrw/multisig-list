@@ -76,6 +76,8 @@ export default App;
 
 
 function checkAddress (address) {
+  address = address.toLowerCase();
+
   if (!address.startsWith('0x')) {
     return checkAddress('0x' + address);
   }
@@ -108,7 +110,8 @@ function checkAddress (address) {
     return {
       warn: (
         <span>
-          You are affected. This address is a Parity Multisig wallet with ${owners} owners.
+          You are affected. 
+          <a target='_blank' href={`https://etherscan.io/address/${address}`}>This address</a> is a Parity Multisig wallet with {owners} owners.
         </span>
       )
     }
