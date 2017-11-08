@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <Grid
         textAlign='center'
-        style={{ height: '100%', marginTop: '25%' }}
+        style={{ height: '75%', paddingTop: '25%' }}
         verticalAlign='middle'
       >
         <Grid.Column style={{ maxWidth: 600 }}>
