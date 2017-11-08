@@ -12,7 +12,7 @@ rm -rf static
 mv build/* .
 rmdir build
 git add .
-git ca -m "Update"
+git commit -m "Update"
 git push
 git checkout master
 cd am-i-affected
